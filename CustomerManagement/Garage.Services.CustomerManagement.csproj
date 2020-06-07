@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Garage.Entity\Garage.DB.Entities.csproj" />
     <ProjectReference Include="..\Structure\Infrastructure.csproj" />
   </ItemGroup>
 

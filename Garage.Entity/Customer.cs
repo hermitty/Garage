@@ -1,4 +1,4 @@
-﻿namespace Garage.Services.CustomerManagement.Model
+﻿namespace Garage.DB.Entities
 {
     public class Customer
     {

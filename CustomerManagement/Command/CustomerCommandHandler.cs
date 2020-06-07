@@ -1,5 +1,5 @@
-﻿using Garage.Services.CustomerManagement.Mapper;
-using Garage.Services.CustomerManagement.Model;
+﻿using Garage.DB.Entities;
+using Garage.Services.CustomerManagement.Mapper;
 using Infrastructure.Command;
 using Infrastructure.Repository;
 using Infrastructure.UnitOfWork;

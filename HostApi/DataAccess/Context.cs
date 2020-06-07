@@ -1,4 +1,4 @@
-﻿using Garage.Services.CustomerManagement.Model;
+﻿using Garage.DB.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Garage.HostApi.DataAccess

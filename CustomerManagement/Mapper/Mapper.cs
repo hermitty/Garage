@@ -1,5 +1,5 @@
-﻿using Garage.Services.CustomerManagement.Command;
-using Garage.Services.CustomerManagement.Model;
+﻿using Garage.DB.Entities;
+using Garage.Services.CustomerManagement.Command;
 
 namespace Garage.Services.CustomerManagement.Mapper
 {
