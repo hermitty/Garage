@@ -1,4 +1,4 @@
-﻿namespace CustomerManagement.Model
+﻿namespace Garage.Services.CustomerManagement.Model
 {
     public class Customer
     {

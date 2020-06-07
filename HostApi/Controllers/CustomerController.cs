@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
-using CustomerManagement.Command;
-using HostApi.DataAccess;
+using Garage.HostApi.DataAccess;
+using Garage.Services.CustomerManagement.Command;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace HostApi.Controllers
+namespace Garage.HostApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

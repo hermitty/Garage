@@ -5,7 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace Structure.Repository
+namespace Infrastructure.Repository
 {
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
@@ -16,7 +16,7 @@ namespace Structure.Repository
         public GenericRepository(DbContext context)
         {
             this.context = context;
-            this.dbSet = context.Set<TEntity>();
+            dbSet = context.Set<TEntity>();
         }
 
         public virtual IEnumerable<TEntity> GetAll(
@@ -50,7 +50,7 @@ namespace Structure.Repository
         public virtual TEntity GetById(int id, string includeProperties = "")
         {
             var t = dbSet.Find(id);
-            if (!String.IsNullOrEmpty(includeProperties))
+            if (!string.IsNullOrEmpty(includeProperties))
                 context.Entry(t).Reference(includeProperties).Load();
             return t;
 

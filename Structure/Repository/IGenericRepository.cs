@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace Structure.Repository
+namespace Infrastructure.Repository
 {
     public interface IGenericRepository<T> where T : class
     {

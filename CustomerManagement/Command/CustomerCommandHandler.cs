@@ -1,11 +1,11 @@
-﻿using CustomerManagement.Mapper;
-using CustomerManagement.Model;
+﻿using Garage.Services.CustomerManagement.Mapper;
+using Garage.Services.CustomerManagement.Model;
 using Infrastructure.Command;
+using Infrastructure.Repository;
 using Infrastructure.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
-using Structure.Repository;
 
-namespace CustomerManagement.Command
+namespace Garage.Services.CustomerManagement.Command
 {
     public class CustomerCommandHandler : ICommandHandler<AddCustomer>
     {
@@ -14,13 +14,13 @@ namespace CustomerManagement.Command
 
         public CustomerCommandHandler(DbContext context)
         {
-            this.uow = new UnitOfWork(context);
+            uow = new UnitOfWork(context);
             repo = uow.Repository<Customer>();
-            
+
         }
         public void Handle(AddCustomer command)
         {
-             repo.Insert(command.MapToCustomer());
+            repo.Insert(command.MapToCustomer());
             uow.Save();
         }
     }

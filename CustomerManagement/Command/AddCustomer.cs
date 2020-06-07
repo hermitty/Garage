@@ -1,8 +1,8 @@
 ﻿using Infrastructure.Command;
 
-namespace CustomerManagement.Command
+namespace Garage.Services.CustomerManagement.Command
 {
-    public  class AddCustomer : ICommand
+    public class AddCustomer : ICommand
     {
         public string Name { get; set; }
 

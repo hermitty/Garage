@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerManagement", "CustomerManagement\CustomerManagement.csproj", "{541F21D9-B81F-439D-9E82-6C1A332FB172}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Garage.Services.CustomerManagement", "CustomerManagement\Garage.Services.CustomerManagement.csproj", "{541F21D9-B81F-439D-9E82-6C1A332FB172}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Structure\Infrastructure.csproj", "{5B5B4958-30BB-4FB7-AC65-F4B8A43CB556}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostApi", "HostApi\HostApi.csproj", "{A4FC3C4D-6074-4214-81D0-94758A9DB7CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Garage.HostApi", "HostApi\Garage.HostApi.csproj", "{A4FC3C4D-6074-4214-81D0-94758A9DB7CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

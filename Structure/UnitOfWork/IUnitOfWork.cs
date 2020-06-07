@@ -1,4 +1,4 @@
-﻿using Structure.Repository;
+﻿using Infrastructure.Repository;
 using System;
 using System.Collections.Generic;
 using System.Text;

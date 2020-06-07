@@ -1,7 +1,7 @@
-﻿using CustomerManagement.Command;
-using CustomerManagement.Model;
+﻿using Garage.Services.CustomerManagement.Command;
+using Garage.Services.CustomerManagement.Model;
 
-namespace CustomerManagement.Mapper
+namespace Garage.Services.CustomerManagement.Mapper
 {
     public static class Mapper
     {

@@ -1,7 +1,7 @@
-﻿using CustomerManagement.Model;
+﻿using Garage.Services.CustomerManagement.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace HostApi.DataAccess
+namespace Garage.HostApi.DataAccess
 {
     public class Context : DbContext
     {

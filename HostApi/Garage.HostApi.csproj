@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CustomerManagement\CustomerManagement.csproj" />
+    <ProjectReference Include="..\CustomerManagement\Garage.Services.CustomerManagement.csproj" />
   </ItemGroup>
 
 
