@@ -9,8 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CustomerManagement\Garage.Services.CustomerManagement.csproj" />
     <ProjectReference Include="..\Garage.Entity\Garage.DB.Entities.csproj" />
+    <ProjectReference Include="..\Garage.Services.CustomerManagement\Garage.Services.CustomerManagement.csproj" />
   </ItemGroup>
 
 </Project>
