@@ -5,13 +5,13 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Structure\Infrastructure.csproj", "{5B5B4958-30BB-4FB7-AC65-F4B8A43CB556}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Garage.DB.Entities", "Garage.Entity\Garage.DB.Entities.csproj", "{1975B3DE-2051-4220-899D-B29EECA5438A}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Garage.DB.Mappers", "Garage.DB.Mappers\Garage.DB.Mappers.csproj", "{85BA0DBC-F2E3-4181-BD56-78841DAC0916}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Garage.Services.CustomerManagement", "Garage.Services.CustomerManagement\Garage.Services.CustomerManagement.csproj", "{A6DE30F5-40EA-4D3F-A22F-DE248E1D0265}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Garage.HostApi", "Garage.HostApi\Garage.HostApi.csproj", "{5E202C6A-D151-4C7A-BACA-0E0B6B3901CE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Garage.DB.Entities", "Garage.DB.Entity\Garage.DB.Entities.csproj", "{BBA67F18-24C9-4F3F-AC57-BC3E4F2B8579}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		{5B5B4958-30BB-4FB7-AC65-F4B8A43CB556}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B5B4958-30BB-4FB7-AC65-F4B8A43CB556}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B5B4958-30BB-4FB7-AC65-F4B8A43CB556}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1975B3DE-2051-4220-899D-B29EECA5438A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1975B3DE-2051-4220-899D-B29EECA5438A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1975B3DE-2051-4220-899D-B29EECA5438A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1975B3DE-2051-4220-899D-B29EECA5438A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{85BA0DBC-F2E3-4181-BD56-78841DAC0916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{85BA0DBC-F2E3-4181-BD56-78841DAC0916}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85BA0DBC-F2E3-4181-BD56-78841DAC0916}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{5E202C6A-D151-4C7A-BACA-0E0B6B3901CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E202C6A-D151-4C7A-BACA-0E0B6B3901CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E202C6A-D151-4C7A-BACA-0E0B6B3901CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBA67F18-24C9-4F3F-AC57-BC3E4F2B8579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBA67F18-24C9-4F3F-AC57-BC3E4F2B8579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBA67F18-24C9-4F3F-AC57-BC3E4F2B8579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBA67F18-24C9-4F3F-AC57-BC3E4F2B8579}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
