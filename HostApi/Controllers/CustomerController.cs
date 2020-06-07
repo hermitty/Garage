@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using AutoMapper;
 using Garage.HostApi.DataAccess;
 using Garage.Services.CustomerManagement.Command;
 using Microsoft.AspNetCore.Mvc;
@@ -9,12 +10,12 @@ namespace Garage.HostApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class Customer : ControllerBase
+    public class CustomerController : ControllerBase
     {
         CustomerCommandHandler commandHandler;
-        public Customer(Context context)
+        public CustomerController(Context context, IMapper mapper)
         {
-            commandHandler = new CustomerCommandHandler(context);
+            commandHandler = new CustomerCommandHandler(context, mapper);
         }
         // GET: api/<Customer>
         [HttpGet]
