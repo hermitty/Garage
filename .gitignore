@@ -33,9 +33,5 @@ msbuild.log
 msbuild.err
 msbuild.wrn
 
-**/migrations/**
-!**/migrations
-!**/migrations/__init__.py
-
 # Visual Studio 2015
 .vs/
