@@ -1,12 +1,9 @@
-using Garage.HostApi.Configurations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Garage.Infrastructure;
-using Garage.Infrastructure.DataAccess;
 
 namespace Garage.HostApi
 {
@@ -24,8 +21,6 @@ namespace Garage.HostApi
         {
             services.AddControllers();
             
-            services.ConfigureMapper();
-
             ApplicationStartup.Initialize(services, Configuration);
         }
 

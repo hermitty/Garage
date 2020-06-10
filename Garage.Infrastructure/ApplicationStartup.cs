@@ -1,4 +1,5 @@
 ﻿using Garage.Domain.Interface;
+using Garage.Infrastructure.Configurations;
 using Garage.Infrastructure.DataAccess;
 using Garage.Infrastructure.Repository;
 using MediatR;
@@ -13,11 +14,10 @@ namespace Garage.Infrastructure
     {
         public static void Initialize(IServiceCollection services, Microsoft.Extensions.Configuration.IConfiguration configuration)
         {
-
+            services.ConfigureMapper();
             services.AddDbContext<Context>
                 (item => item.UseSqlServer(configuration.GetConnectionString("connectionString")));
 
-            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
 
             var assembly = AppDomain.CurrentDomain.Load("Garage.Application");

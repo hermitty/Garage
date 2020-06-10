@@ -2,7 +2,7 @@
 using Garage.DB.Mappers;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Garage.HostApi.Configurations
+namespace Garage.Infrastructure.Configurations
 {
     public static class MapperConfiguration
     {
