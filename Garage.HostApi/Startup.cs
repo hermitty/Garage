@@ -33,7 +33,7 @@ namespace Garage.HostApi
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
 
-            var assembly = AppDomain.CurrentDomain.Load("Garage.Services.CustomerManagement");
+            var assembly = AppDomain.CurrentDomain.Load("Garage.Application");
             services.AddMediatR(assembly);
 
         }
