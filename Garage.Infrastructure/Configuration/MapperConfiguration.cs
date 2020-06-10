@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Garage.DB.Mappers;
+using Garage.Application.Mapper;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Garage.Infrastructure.Configurations
+namespace Garage.Infrastructure.Configuration
 {
     public static class MapperConfiguration
     {

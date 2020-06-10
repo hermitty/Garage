@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
+using Garage.Application.CustomerManagement.Command;
 using Garage.Domain.Entity;
-using Garage.Services.CustomerManagement.Command;
 
-namespace Garage.DB.Mappers
+namespace Garage.Application.Mapper
 {
     public class CustomerMapper : Profile
     {

@@ -1,6 +1,6 @@
 ﻿using Garage.Domain.Interface;
 
-namespace Garage.Services.CustomerManagement.Command
+namespace Garage.Application.CustomerManagement.Command
 {
     public class AddCustomer : ICommand
     {

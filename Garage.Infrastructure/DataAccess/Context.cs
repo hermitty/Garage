@@ -8,10 +8,7 @@ namespace Garage.Infrastructure.DataAccess
         DbSet<Customer> Customer { get; set; }
         DbSet<Vehicle> Vehicle { get; set; }
         DbSet<Task> Task { get; set; }
-
         DbSet<User> User { get; set; }
-
-
 
         public Context(DbContextOptions<Context> options)
               : base(options)

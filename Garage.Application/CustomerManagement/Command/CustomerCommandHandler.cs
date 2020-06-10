@@ -5,7 +5,7 @@ using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Garage.Services.CustomerManagement.Command
+namespace Garage.Application.CustomerManagement.Command
 {
     public class CustomerCommandHandler : ICommandHandler<AddCustomer>
     {

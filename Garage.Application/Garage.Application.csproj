@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interface\" />
+    <Folder Include="CustomerManagement\Query\" />
   </ItemGroup>
 
 </Project>

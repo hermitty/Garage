@@ -1,5 +1,5 @@
 ﻿using Garage.Domain.Interface;
-using Garage.Infrastructure.Configurations;
+using Garage.Infrastructure.Configuration;
 using Garage.Infrastructure.DataAccess;
 using Garage.Infrastructure.Repository;
 using MediatR;
