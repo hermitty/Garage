@@ -18,7 +18,9 @@ namespace Garage.Infrastructure.DataAccess
         {
             builder.Entity<Customer>().ToTable("Customer");
             builder.Entity<Vehicle>().ToTable("Vehicle").HasOne(v => v.Owner);
-            builder.Entity<User>().ToTable("User");
+            builder.Entity<User>().ToTable("User").HasData(
+                new User() {Id = 1, Login = "admin", Password = "12345", Role = Role.Admin}
+                );
             builder.Entity<Job>().ToTable("Task").HasOne(v => v.Assignee);
             builder.Entity<Job>().ToTable("Task").HasOne(v => v.Vehicle);
 
