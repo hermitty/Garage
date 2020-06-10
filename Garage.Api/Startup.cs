@@ -23,8 +23,7 @@ namespace Garage.HostApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<Context>
-                (item => item.UseSqlServer(Configuration.GetConnectionString("connectionString")));
+            
             services.ConfigureMapper();
 
             ApplicationStartup.Initialize(services, Configuration);
