@@ -32,7 +32,6 @@ namespace Garage.Application.CustomerManagement.Command
             repo.Insert(customer);
             uow.Save();
             return null;
-
         }
     }
 }

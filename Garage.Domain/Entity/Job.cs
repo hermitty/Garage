@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Garage.Domain.Entity
 {
-    public class Task
+    public class Job
     {
         public int Id { get; set; }
         public string Title { get; set; }
