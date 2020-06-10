@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
-using Garage.DB.Entities;
+using Garage.Domain.Entity;
+using Garage.Domain.Interface;
 using Infrastructure.Command;
-using Infrastructure.Repository;
-using Infrastructure.UnitOfWork;
-using Microsoft.EntityFrameworkCore;
+using MediatR;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Garage.Services.CustomerManagement.Command
 {
@@ -13,9 +14,9 @@ namespace Garage.Services.CustomerManagement.Command
         private readonly IMapper mapper;
         IGenericRepository<Customer> repo;
 
-        public CustomerCommandHandler(DbContext context, IMapper mapper)
+        public CustomerCommandHandler(IUnitOfWork uow, IMapper mapper)
         {
-            uow = new UnitOfWork(context);
+            this.uow = uow;
             repo = uow.Repository<Customer>();
             this.mapper = mapper;
         }
@@ -24,6 +25,15 @@ namespace Garage.Services.CustomerManagement.Command
             var customer = mapper.Map<Customer>(command);
             repo.Insert(customer);
             uow.Save();
+        }
+
+        public Task<Unit> Handle(AddCustomer command, CancellationToken cancellationToken)
+        {
+            var customer = mapper.Map<Customer>(command);
+            repo.Insert(customer);
+            uow.Save();
+            return null;
+
         }
     }
 }

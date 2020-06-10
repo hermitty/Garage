@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using AutoMapper;
-using Garage.HostApi.DataAccess;
 using Garage.Services.CustomerManagement.Command;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -12,10 +11,12 @@ namespace Garage.HostApi.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        CustomerCommandHandler commandHandler;
-        public CustomerController(Context context, IMapper mapper)
+       
+        private readonly IMediator mediator;
+
+        public CustomerController(IMediator mediator)
         {
-            commandHandler = new CustomerCommandHandler(context, mapper);
+            this.mediator = mediator;
         }
         // GET: api/<Customer>
         [HttpGet]
@@ -41,7 +42,7 @@ namespace Garage.HostApi.Controllers
         [HttpPost("[action]")]
         public ActionResult Add(AddCustomer command)
         {
-            commandHandler.Handle(command);
+            mediator.Send(command);
             return Ok();
         }
 

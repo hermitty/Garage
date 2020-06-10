@@ -1,18 +1,15 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Garage.Domain</AssemblyName>
+    <RootNamespace>Garage.Domain</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="MediatR" Version="8.0.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjectionFixed" Version="5.1.2" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.5" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Garage.Domain\Garage.Domain.csproj" />
   </ItemGroup>
 
 </Project>

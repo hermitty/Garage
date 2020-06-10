@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Garage.DB.Entities
+namespace Garage.Domain.Entity
 {
     public class Task
     {
@@ -7,7 +7,7 @@ namespace Garage.DB.Entities
         public string Title { get; set; }
         public string Description { get; set; }
         public User Assignee { get; set; }
-        public int AssigneeId { get; set; } 
+        public int AssigneeId { get; set; }
         public int ReporterId { get; set; }
         public Vehicle Vehicle { get; set; }
         public int VehicleId { get; set; }

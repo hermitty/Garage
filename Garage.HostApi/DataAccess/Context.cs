@@ -1,4 +1,4 @@
-﻿using Garage.DB.Entities;
+﻿using Garage.Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 
 namespace Garage.HostApi.DataAccess

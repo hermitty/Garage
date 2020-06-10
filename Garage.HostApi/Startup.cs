@@ -6,6 +6,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Infrastructure.UnitOfWork;
+using System;
+using MediatR;
+using Garage.Domain.Interface;
+using Garage.Infrastructure.Repository;
 
 namespace Garage.HostApi
 {
@@ -25,7 +30,12 @@ namespace Garage.HostApi
             services.AddDbContext<Context>
                 (item => item.UseSqlServer(Configuration.GetConnectionString("connectionString")));
             services.ConfigureMapper();
-            
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
+
+            var assembly = AppDomain.CurrentDomain.Load("Garage.Services.CustomerManagement");
+            services.AddMediatR(assembly);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

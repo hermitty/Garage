@@ -1,4 +1,4 @@
-﻿namespace Garage.DB.Entities
+﻿namespace Garage.Domain.Entity
 {
     public class User
     {

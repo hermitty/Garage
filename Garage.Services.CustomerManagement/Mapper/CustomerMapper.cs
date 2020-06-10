@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Garage.DB.Entities;
+using Garage.Domain.Entity;
 using Garage.Services.CustomerManagement.Command;
 
 namespace Garage.DB.Mappers

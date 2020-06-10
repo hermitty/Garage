@@ -1,18 +1,19 @@
-﻿using Infrastructure.Repository;
+﻿using Garage.Domain.Interface;
+using Garage.HostApi.DataAccess;
+using Garage.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Infrastructure.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private DbContext context;
+        private Context context;
         private Dictionary<Type, object> repositories = new Dictionary<Type, object>();
 
-        public UnitOfWork(DbContext context)
+        public UnitOfWork(Context context)
         {
             this.context = context;
         }
