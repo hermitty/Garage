@@ -1,7 +1,7 @@
 ﻿using Garage.Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 
-namespace Garage.HostApi.DataAccess
+namespace Garage.Infrastructure.DataAccess
 {
     public class Context : DbContext
     {

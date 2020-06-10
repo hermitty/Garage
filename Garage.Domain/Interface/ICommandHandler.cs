@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastructure.Command
+namespace Garage.Domain.Interface
 {
     public interface ICommandHandler<in TCommand> :
        IRequestHandler<TCommand> where TCommand : ICommand

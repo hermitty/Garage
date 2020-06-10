@@ -1,12 +1,11 @@
 ﻿using Garage.Domain.Interface;
-using Garage.HostApi.DataAccess;
-using Garage.Infrastructure.Repository;
+using Garage.Infrastructure.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Infrastructure.UnitOfWork
+namespace Garage.Infrastructure.Repository
 {
     public class UnitOfWork : IUnitOfWork
     {

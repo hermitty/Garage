@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Garage.Domain.Entity;
 using Garage.Domain.Interface;
-using Infrastructure.Command;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;

@@ -1,4 +1,4 @@
-﻿using Infrastructure.Command;
+﻿using Garage.Domain.Interface;
 
 namespace Garage.Services.CustomerManagement.Command
 {
