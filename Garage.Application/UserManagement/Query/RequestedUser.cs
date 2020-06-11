@@ -1,9 +1,12 @@
-﻿using Garage.Domain.Interface;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Garage.Application.UserManagement.Command
+namespace Garage.Application.UserManagement.Query
 {
-    public class CreateUser : ICommand <int>
+    public class RequestedUser
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Role { get; set; }

@@ -31,7 +31,7 @@ namespace Garage.Application.CustomerManagement.Command
             var customer = mapper.Map<Customer>(command);
             repo.Insert(customer);
             uow.Save();
-            return null;
+            return Task.FromResult(Unit.Value);
         }
     }
 }

@@ -2,8 +2,9 @@
 
 namespace Garage.Application.UserManagement.Command
 {
-    public class CreateUser : ICommand <int>
+    public class EditUser : ICommand
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Role { get; set; }
