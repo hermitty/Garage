@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Garage.Application.CustomerManagement.Command;
+using Garage.Infrastructure.Helpers;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -40,7 +41,7 @@ namespace Garage.Infrastructure.Controllers
         }
 
         // PUT api/<Customer>/5
-        [Authorize]
+        [Authorize(Roles = Roles.Admin)]
         [HttpPost("[action]")]
         public ActionResult Add(AddCustomer command)
         {
