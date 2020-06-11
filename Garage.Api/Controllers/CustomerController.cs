@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Garage.Application.CustomerManagement.Command;
+﻿using Garage.Application.CustomerManagement.Command;
+using Garage.Application.CustomerManagement.Query;
 using Garage.Infrastructure.Helpers;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -13,35 +13,14 @@ namespace Garage.Infrastructure.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-       
         private readonly IMediator mediator;
 
         public CustomerController(IMediator mediator)
         {
             this.mediator = mediator;
         }
-        // GET: api/<Customer>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
-        // GET api/<Customer>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<Customer>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/<Customer>/5
-        [Authorize(Roles = Roles.Admin)]
+        [Authorize(Roles = Roles.Worker)]
         [HttpPost("[action]")]
         public ActionResult Add(AddCustomer command)
         {
@@ -49,10 +28,60 @@ namespace Garage.Infrastructure.Controllers
             return Ok();
         }
 
-        // DELETE api/<Customer>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [Authorize(Roles = Roles.Worker)]
+        [HttpGet("[action]")]
+        public ActionResult GetAll(GetAllCustomers command)
         {
+            mediator.Send(command);
+            return Ok();
+        }
+
+        [Authorize(Roles = Roles.Worker)]
+        [HttpGet("[action]")]
+        public ActionResult GetById(GetCustomer command)
+        {
+            mediator.Send(command);
+            return Ok();
+        }
+
+        [Authorize(Roles = Roles.Worker)]
+        [HttpGet("[action]")]
+        public ActionResult GetVehicle(GetVehicle command)
+        {
+            mediator.Send(command);
+            return Ok();
+        }
+
+        [Authorize(Roles = Roles.Worker)]
+        [HttpGet("[action]")]
+        public ActionResult GetVehiclesForCustomer(GetVehiclesForCustomer command)
+        {
+            mediator.Send(command);
+            return Ok();
+        }
+
+        [Authorize(Roles = Roles.Worker)]
+        [HttpPost("[action]")]
+        public ActionResult AddVehicle(AddVehicleForCustomer command)
+        {
+            mediator.Send(command);
+            return Ok();
+        }
+
+        [Authorize(Roles = Roles.Worker)]
+        [HttpPost("[action]")]
+        public ActionResult DeleteCustomer(DeleteCustomer command)
+        {
+            mediator.Send(command);
+            return Ok();
+        }
+
+        [Authorize(Roles = Roles.Worker)]
+        [HttpPost("[action]")]
+        public ActionResult EditVehicle(EditVehicle command)
+        {
+            mediator.Send(command);
+            return Ok();
         }
     }
 }
