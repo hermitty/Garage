@@ -1,4 +1,5 @@
 ﻿using Garage.Application.UserManagement.Command;
+using Garage.Application.UserManagement.Query;
 using Garage.Infrastructure.Helpers;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -29,32 +30,49 @@ namespace Garage.Api.Controllers
         [HttpPost("[action]")]
         public ActionResult ChangePassword(ChangePassword command)
         {
-            var token = mediator.Send(command);
-            return Ok(token);
+            mediator.Send(command);
+            return Ok();
         }
 
         [Authorize(Roles = Roles.Admin)]
         [HttpPost("[action]")]
         public ActionResult Create(CreateUser command)
         {
-            var token = mediator.Send(command);
-            return Ok(token);
+            var response = mediator.Send(command);
+            return Ok(response);
         }
         
         [Authorize(Roles = Roles.Admin)]
         [HttpPost("[action]")]
         public ActionResult Delete(DeleteUser command)
         {
-            var token = mediator.Send(command);
-            return Ok(token);
+            mediator.Send(command);
+            return Ok();
         }
 
         [Authorize(Roles = Roles.Admin)]
         [HttpPost("[action]")]
         public ActionResult Edit(EditUser command)
         {
-            var token = mediator.Send(command);
-            return Ok(token);
+            mediator.Send(command);
+            return Ok();
+        }
+
+
+        [Authorize(Roles = Roles.Admin)]
+        [HttpGet("[action]")]
+        public ActionResult GetAllUsers(GetAllUsers command)
+        {
+            var response = mediator.Send(command);
+            return Ok(response);
+        }
+
+        [Authorize(Roles = Roles.Admin)]
+        [HttpGet("[action]")]
+        public ActionResult GetUser(GetUser command)
+        {
+            var response = mediator.Send(command);
+            return Ok(response);
         }
     }
 }

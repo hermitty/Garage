@@ -24,40 +24,40 @@ namespace Garage.Infrastructure.Controllers
         [HttpPost("[action]")]
         public ActionResult Add(AddCustomer command)
         {
-            mediator.Send(command);
-            return Ok();
+            var response = mediator.Send(command);
+            return Ok(response);
         }
 
         [Authorize(Roles = Roles.Worker)]
         [HttpGet("[action]")]
         public ActionResult GetAll(GetAllCustomers command)
         {
-            mediator.Send(command);
-            return Ok();
+            var response = mediator.Send(command);
+            return Ok(response);
         }
 
         [Authorize(Roles = Roles.Worker)]
         [HttpGet("[action]")]
         public ActionResult GetById(GetCustomer command)
         {
-            mediator.Send(command);
-            return Ok();
+            var response = mediator.Send(command);
+            return Ok(response);
         }
 
         [Authorize(Roles = Roles.Worker)]
         [HttpGet("[action]")]
         public ActionResult GetVehicle(GetVehicle command)
         {
-            mediator.Send(command);
-            return Ok();
+            var response = mediator.Send(command);
+            return Ok(response);
         }
 
         [Authorize(Roles = Roles.Worker)]
         [HttpGet("[action]")]
         public ActionResult GetVehiclesForCustomer(GetVehiclesForCustomer command)
         {
-            mediator.Send(command);
-            return Ok();
+            var response = mediator.Send(command);
+            return Ok(response);
         }
 
         [Authorize(Roles = Roles.Worker)]

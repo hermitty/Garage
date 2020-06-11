@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Garage.Application.CustomerManagement.Command
 {
-    public class CustomerCommandHandler : ICommandHandler<AddCustomer>, ICommandHandler<EditCustomer>, ICommandHandler<DeleteCustomer>,
+    public class CustomerCommandHandler : ICommandHandler<AddCustomer, int>, ICommandHandler<EditCustomer>, ICommandHandler<DeleteCustomer>,
                                           ICommandHandler<AddVehicleForCustomer>, ICommandHandler<EditVehicle>, ICommandHandler<DeleteVehicle>
     {
         private readonly IUnitOfWork uow;
@@ -21,12 +21,12 @@ namespace Garage.Application.CustomerManagement.Command
             this.mapper = mapper;
         }
 
-        public Task<Unit> Handle(AddCustomer command, CancellationToken cancellationToken)
+        public Task<int> Handle(AddCustomer command, CancellationToken cancellationToken)
         {
             var customer = mapper.Map<Customer>(command);
             repo.Insert(customer);
             uow.Save();
-            return Task.FromResult(Unit.Value);
+            return Task.FromResult(customer.Id);
         }
 
         public Task<Unit> Handle(EditCustomer command, CancellationToken cancellationToken)

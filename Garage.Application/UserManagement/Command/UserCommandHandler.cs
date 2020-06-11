@@ -23,7 +23,6 @@ namespace Garage.Application.UserManagement.Command
             this.mapper = mapper;
             this.identityService = identityService;
             repo = uow.Repository<User>();
-
         }
 
         public Task<string> Handle(Authorize command, CancellationToken cancellationToken)
