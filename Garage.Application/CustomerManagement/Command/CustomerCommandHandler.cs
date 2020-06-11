@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Garage.Application.CustomerManagement.Command
 {
-    public class CustomerCommandHandler : ICommandHandler<AddCustomer>
+    public class CustomerCommandHandler : ICommandHandler<AddCustomer>, ICommandHandler<EditCustomer>, ICommandHandler<DeleteCustomer>,
+                                          ICommandHandler<AddVehicleForCustomer>, ICommandHandler<EditVehicle>, ICommandHandler<DeleteVehicle>
     {
         private readonly IUnitOfWork uow;
         private readonly IMapper mapper;
@@ -19,17 +20,49 @@ namespace Garage.Application.CustomerManagement.Command
             repo = uow.Repository<Customer>();
             this.mapper = mapper;
         }
-        public void Handle(AddCustomer command)
-        {
-            var customer = mapper.Map<Customer>(command);
-            repo.Insert(customer);
-            uow.Save();
-        }
 
         public Task<Unit> Handle(AddCustomer command, CancellationToken cancellationToken)
         {
             var customer = mapper.Map<Customer>(command);
             repo.Insert(customer);
+            uow.Save();
+            return Task.FromResult(Unit.Value);
+        }
+
+        public Task<Unit> Handle(EditCustomer command, CancellationToken cancellationToken)
+        {
+            var customer = mapper.Map<Customer>(command);
+            repo.Update(customer);
+            uow.Save();
+            return Task.FromResult(Unit.Value);
+        }
+
+        public Task<Unit> Handle(DeleteCustomer command, CancellationToken cancellationToken)
+        {
+            repo.Delete(command.Id);
+            uow.Save();
+            return Task.FromResult(Unit.Value);
+        }
+
+        public Task<Unit> Handle(AddVehicleForCustomer command, CancellationToken cancellationToken)
+        {
+            var vehicle = mapper.Map<Vehicle>(command);
+            uow.Repository<Vehicle>().Insert(vehicle);
+            uow.Save();
+            return Task.FromResult(Unit.Value);
+        }
+
+        public Task<Unit> Handle(EditVehicle command, CancellationToken cancellationToken)
+        {
+            var vehicle = mapper.Map<Vehicle>(command);
+            uow.Repository<Vehicle>().Update(vehicle);
+            uow.Save();
+            return Task.FromResult(Unit.Value);
+        }
+
+        public Task<Unit> Handle(DeleteVehicle command, CancellationToken cancellationToken)
+        {
+            uow.Repository<Vehicle>().Delete(command.Id);
             uow.Save();
             return Task.FromResult(Unit.Value);
         }

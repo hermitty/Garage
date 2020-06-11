@@ -29,7 +29,7 @@ namespace Garage.Application.UserManagement.Query
         {
             var user = repo.GetById(query.Id);
             var response = mapper.Map<RequestedUser>(user);
-            throw new System.NotImplementedException();
+            return Task.FromResult(response);
         }
     }
 }
