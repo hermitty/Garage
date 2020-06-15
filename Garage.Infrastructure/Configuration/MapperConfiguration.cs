@@ -9,6 +9,8 @@ namespace Garage.Infrastructure.Configuration
         public static void ConfigureMapper(this IServiceCollection services)
         {
             services.AddAutoMapper(typeof(CustomerMapper));
+            services.AddAutoMapper(typeof(CustomerMapper));
+            services.AddAutoMapper(typeof(JobMapper));
         }
     }
 }

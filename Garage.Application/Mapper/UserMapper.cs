@@ -16,6 +16,7 @@ namespace Garage.Application.Mapper
                 .ForMember(d => d.Role, op => op.MapFrom((cu, u) => u.Role = (Role)Enum.Parse(typeof(Role), cu.Role)));
             this.CreateMap<EditUser, User>()
                 .ForMember(d => d.Role, op => op.MapFrom((eu, u) => u.Role = (Role)Enum.Parse(typeof(Role), eu.Role)));
+            CreateMap<User, RequestedWorker>();
 
         }
     }

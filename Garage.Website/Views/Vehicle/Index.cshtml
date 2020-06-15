@@ -1,0 +1,57 @@
+﻿@model Garage.Website.Models.ViewModel.VehicleListViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a a>@Html.ActionLink("Crate new", "Create", new { Model.OwnerId })</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                License Number
+            </th>
+            <th>
+                Brand
+            </th>
+            <th>
+               Type
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Vehicle) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LicenseNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+           
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { item.Id }) |
+                @Html.ActionLink("Add job", "Create", "Job", new { item.Id })
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

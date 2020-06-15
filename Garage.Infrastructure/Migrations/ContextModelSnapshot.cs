@@ -53,17 +53,14 @@ namespace Garage.Infrastructure.Migrations
                     b.Property<int>("AssigneeId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FinalDescription")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ReporterId")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("Scheduled")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -80,7 +77,7 @@ namespace Garage.Infrastructure.Migrations
 
                     b.HasIndex("VehicleId");
 
-                    b.ToTable("Task");
+                    b.ToTable("Job");
                 });
 
             modelBuilder.Entity("Garage.Domain.Entity.User", b =>
@@ -122,7 +119,21 @@ namespace Garage.Infrastructure.Migrations
                             Active = false,
                             Login = "admin",
                             Password = "12345",
-                            Role = 2
+                            Role = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Active = false,
+                            Name = "Worker1",
+                            Role = 0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Active = false,
+                            Name = "Worker2",
+                            Role = 0
                         });
                 });
 
@@ -139,10 +150,7 @@ namespace Garage.Infrastructure.Migrations
                     b.Property<string>("LicenseNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OwnerId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("OwnerId1")
+                    b.Property<int>("OwnerId")
                         .HasColumnType("int");
 
                     b.Property<string>("Type")
@@ -150,7 +158,7 @@ namespace Garage.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("OwnerId1");
+                    b.HasIndex("OwnerId");
 
                     b.ToTable("Vehicle");
                 });
@@ -174,7 +182,9 @@ namespace Garage.Infrastructure.Migrations
                 {
                     b.HasOne("Garage.Domain.Entity.Customer", "Owner")
                         .WithMany()
-                        .HasForeignKey("OwnerId1");
+                        .HasForeignKey("OwnerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

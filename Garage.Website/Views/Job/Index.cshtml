@@ -1,0 +1,63 @@
+﻿@model Garage.Website.Models.ViewModel.JobListViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Jobs</h1>
+
+<div style="margin-top: 10px; margin-bottom: 10px;">
+    @Html.ActionLink("<", "Index", new { date = Model.Date.AddDays(-1) })
+    <span class="text-primary"><b>@Model.Date.ToString("dd-MM-yyyy")</b></span>
+    @Html.ActionLink(">", "Index", new { date = Model.Date.AddDays(1) })
+    @Html.ActionLink("Today", "Index", new { date = DateTime.Today })
+</div>
+
+@*<p>
+    <a asp-action="Create">Add job</a>
+</p>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+               Asignee Name
+            </th>
+            <th>
+                Status
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Jobs) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssigneeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+             
+                @Html.ActionLink("Details", "Details", new {  id=item.Id }) |
+                @Html.ActionLink("Edit", "Edit", new {  id=item.Id }) 
+     
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

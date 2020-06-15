@@ -12,7 +12,7 @@ namespace Garage.Domain.Entity
         public int VehicleId { get; set; }
         public string FinalDescription { get; set; }
         public TaskStatus Status { get; set; }
-        public DateTime Created { get; set; }
+        public DateTime Scheduled { get; set; }
     }
 
     public enum TaskStatus

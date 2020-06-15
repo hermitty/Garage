@@ -47,9 +47,10 @@ namespace Garage.Application.CustomerManagement.Query
 
         public Task<IEnumerable<RequestedVehicle>> Handle(GetVehiclesForCustomer query, CancellationToken cancellationToken)
         {
-            var vehicles = uow.Repository<Vehicle>().GetAll().Where(v => v.OwnerId == query.CustomerId);
-            var response = vehicles.Select(u => mapper.Map<RequestedVehicle>(u));
+            var vehicles = uow.Repository<Vehicle>().GetAll()?.Where(v => v.OwnerId == query.CustomerId);
+            var response = vehicles?.Select(u => mapper.Map<RequestedVehicle>(u));
             return Task.FromResult(response);
         }
+
     }
 }

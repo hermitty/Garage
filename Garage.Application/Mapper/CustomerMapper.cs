@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Garage.Application.CustomerManagement.Command;
 using Garage.Application.CustomerManagement.Query;
+using Garage.Application.UserManagement.Query;
 using Garage.Domain.Entity;
 
 namespace Garage.Application.Mapper
@@ -13,6 +14,7 @@ namespace Garage.Application.Mapper
             CreateMap<EditCustomer, Customer>();
             CreateMap<Customer, RequestedCustomer>();
             CreateMap<AddVehicleForCustomer, Vehicle>();
+            CreateMap<EditVehicle, Vehicle>();
             CreateMap<Vehicle, RequestedVehicle>();
         }
     }
