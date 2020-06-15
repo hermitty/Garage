@@ -77,7 +77,6 @@ namespace Garage.Website.Controllers
                     Id = w.Id,
                     Name = w.Name
                 }).ToList();
-            workers.Add(new Worker() { Id = 0, Name = ""});
             var job = new Job()
             {
                 VehicleId = id,
